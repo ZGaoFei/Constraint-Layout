@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextDefault">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#cccccc</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="TextWidthMatch" parent="TextDefault">
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="TextWidthWrap" parent="TextDefault">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutEasyUseActivity;
+import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutTwoActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
@@ -24,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ConstraintLayoutEasyUseActivity.start(mContext);
+            }
+        });
+
+        findViewById(R.id.tv_two).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConstraintLayoutTwoActivity.start(mContext);
             }
         });
     }

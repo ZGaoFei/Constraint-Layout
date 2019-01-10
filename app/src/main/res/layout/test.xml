@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_test_one"
+        style="@style/TextWidthWrap"
+        android:visibility="gone"
+        android:text="one"/>
+
+    <TextView
+        android:id="@+id/tv_test_two"
+        style="@style/TextWidthWrap"
+        android:layout_toRightOf="@+id/tv_test_one"
+        android:layout_marginLeft="10dp"
+        android:text="two"/>
+
+</RelativeLayout>

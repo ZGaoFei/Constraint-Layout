@@ -6,13 +6,259 @@
     android:layout_height="match_parent"
     tools:context=".ui.ConstraintLayoutEasyUseActivity">
 
+    <!-- 宽度自适应 -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tv_width_wrap"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 宽度占满全屏 -->
+    <TextView
+        android:id="@+id/tv_width_match"
+        style="@style/TextWidthMatch"
+        android:text="three"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_width_wrap" />
+
+    <!-- 模仿LinearLayout -->
+    <TextView
+        android:id="@+id/tv_linear_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="5dp"
+        android:text="one"
+        app:layout_constraintTop_toBottomOf="@id/tv_width_match" />
+
+    <TextView
+        android:id="@+id/tv_linear_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="5dp"
+        android:text="two"
+        app:layout_constraintTop_toBottomOf="@id/tv_linear_one" />
+
+    <TextView
+        android:id="@+id/tv_linear_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="5dp"
+        android:text="three"
+        app:layout_constraintTop_toBottomOf="@id/tv_linear_two" />
+
+    <!-- 中心及四周，模仿RelativeLayout -->
+    <TextView
+        android:id="@+id/tv_one"
+        style="@style/TextWidthWrap"
+        android:text="one"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:text="hello world!!!"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_two"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="two"
+        app:layout_constraintBottom_toTopOf="@id/tv_one"
+        app:layout_constraintRight_toLeftOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_three"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="three"
+        app:layout_constraintBottom_toTopOf="@id/tv_one"
+        app:layout_constraintLeft_toRightOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_four"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="four"
+        app:layout_constraintRight_toLeftOf="@id/tv_one"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_five"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="five"
+        app:layout_constraintLeft_toRightOf="@id/tv_one"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <TextView
+        android:id="@+id/tv_six"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="six"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_seven"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="seven"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_eight"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="eight"
+        app:layout_constraintBottom_toTopOf="@id/tv_one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nine"
+        style="@style/TextWidthWrap"
+        android:layout_margin="5dp"
+        android:text="nine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_one" />
+
+    <!-- 四角 -->
+    <TextView
+        android:id="@+id/tv_left_top"
+        style="@style/TextWidthWrap"
+        android:text="left top" />
+
+    <TextView
+        android:id="@+id/tv_right_top"
+        style="@style/TextWidthWrap"
+        android:text="right top"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_left_bottom"
+        style="@style/TextWidthWrap"
+        android:text="left bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_right_bottom"
+        style="@style/TextWidthWrap"
+        android:text="right bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- 底部居中 -->
+    <TextView
+        android:id="@+id/tv_center_bottom"
+        style="@style/TextWidthWrap"
+        android:text="center bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_right_center"
+        style="@style/TextWidthWrap"
+        android:text="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 横向自适应平均分配 -->
+    <TextView
+        android:id="@+id/tv_equal_one"
+        style="@style/TextWidthWrap"
+        android:text="one"
+        app:layout_constraintBottom_toTopOf="@+id/tv_equal_five"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_equal_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_nine" />
+
+    <TextView
+        android:id="@+id/tv_equal_two"
+        style="@style/TextWidthWrap"
+        android:text="two"
+        app:layout_constraintBottom_toTopOf="@+id/tv_equal_five"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_one"
+        app:layout_constraintRight_toLeftOf="@id/tv_equal_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_nine" />
+
+    <TextView
+        android:id="@+id/tv_equal_three"
+        style="@style/TextWidthWrap"
+        android:text="three"
+        app:layout_constraintBottom_toTopOf="@+id/tv_equal_five"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_two"
+        app:layout_constraintRight_toLeftOf="@id/tv_equal_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_nine" />
+
+    <TextView
+        android:id="@+id/tv_equal_four"
+        style="@style/TextWidthWrap"
+        android:text="four"
+        app:layout_constraintBottom_toTopOf="@+id/tv_equal_five"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nine" />
+
+    <!-- 横向占满全屏平分 -->
+    <TextView
+        android:id="@+id/tv_equal_five"
+        style="@style/TextWidthMatch"
+        android:text="five"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_equal_six"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center_bottom"
+        app:layout_constraintTop_toBottomOf="@id/tv_equal_one"/>
+
+    <TextView
+        android:id="@+id/tv_equal_six"
+        style="@style/TextWidthMatch"
+        android:text="six"
+        app:layout_constraintRight_toLeftOf="@+id/tv_equal_seven"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_five"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center_bottom"
+        app:layout_constraintTop_toBottomOf="@id/tv_equal_one"/>
+
+    <TextView
+        android:id="@+id/tv_equal_seven"
+        style="@style/TextWidthMatch"
+        android:text="seven"
+        app:layout_constraintRight_toLeftOf="@+id/tv_equal_eight"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_six"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center_bottom"
+        app:layout_constraintTop_toBottomOf="@id/tv_equal_one"/>
+
+    <TextView
+        android:id="@+id/tv_equal_eight"
+        style="@style/TextWidthMatch"
+        android:text="eight"
+        app:layout_constraintLeft_toRightOf="@+id/tv_equal_seven"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_center_bottom"
+        app:layout_constraintTop_toBottomOf="@id/tv_equal_one"/>
+
+    <!-- other -->
+    <TextView
+        android:id="@+id/tv_other"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_width_match"
+        android:text="start"/>
+
+    <TextView
+        android:id="@+id/tv_other_end"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_other"
+        app:layout_constraintTop_toBottomOf="@+id/tv_width_match"
+        android:text="end"/>
 
 </android.support.constraint.ConstraintLayout>
