@@ -32,6 +32,7 @@
     layout_constraintStart_toStartOf
     layout_constraintEnd_toStartOf
     layout_constraintEnd_toEndOf
+    layout_constraintBaseline_toBaselineOf：文字底部对齐,与alignBaseLine属性相似
 
     margin
 
@@ -107,5 +108,71 @@
     的值为percent，取值范围为0-1
     layout_constraintWidth_percent
     layout_constraintHeight_percent
+
+
+    Ratio
+    layout_constraintDimensionRatio
+
+    宽或高至少一边设置为MATCH_CONSTRAINT（0dp）
+    只有一边设置为0dp时，此时跟x,y轴的约束无关
+
+    当不设置w/h时（2:1），均为宽：高
+
+    当设置w/h时（w,2:1）与设置dp值的一边有关
+    w:0dp
+    h:100dp
+    w,2:1  宽为2，高为1，宽：高
+    h,2:1  宽为1/2，高为1，高：宽
+    w:100dp
+    h:0dp
+    w,2:1  宽为1，高为2，高：宽
+    h,2:1  宽为1，高位1/2，宽：高
+
+    当两边都设置为MATCH_CONSTRAINT（0dp）时，根据是宽还是高设置约束
+    x轴设置约束
+    W,2:3  宽为1，高为2/3，高：宽
+    H,2:3  宽为1，高为3/2，宽：高
+    y轴设置约束时
+    W,2:3  宽为2/3，高为1，宽：高
+    H,2:3  宽为3/2，高位1，高：宽
+
+
+    Chains
+    chains 提供了在一个单轴（横轴或纵轴）中类似组的行为。另一轴可以独立进行约束。
+    链（chains）中的相互两个组件之间，需要进行互相约束
+    一个相互间双向连接的组件集合就认为是一个chain
+
+    chain head
+    即水平chain的最左边的元素，或纵向chain的最顶部元素
+
+    Margins in chains
+    如果在连接中定义了margins，chain中元素的定位就会发生变化。在Chain Style为CHAIN_SPREAD时，margins设置，会扣除已分配的空间
+    (注意，android_layoutMargin和goneMargin的表现是不同的)
+
+    Chain Style
+    如果在chain head元素上设置 layout_constraintHorizontal_chainStyle或layout_constraintVertical_chainStyle ，
+    chain的行为就会发生相应的变化。
+
+    styles：
+    （参考activity_constraint_layout_three的51行向下）
+
+    CHAIN_SPREAD
+    对应属性值：spread。默认样式，元素铺展开
+    在当前样式下，如果一些组件设置了”match_constraint”，它们将会分割占用有效的空间
+
+    CHAIN_SPREAD_INSIDE
+    对应属性值：spread_inside。类似，spread。chain的两端元素不会被展开
+
+    CHAIN_PACKED
+    对应属性值：packed。将chain中元素包裹起来，当设置了横向或纵向的bias时，会影响其中的所有元素。
+
+    Weighted chains
+    （参考activity_constraint_layout_three第51行）
+    类似LinearLayout中的android:layout_weight属性。
+    使用layout_constraintHorizontal_weight或layout_constraintVertical_weight，当宽或高为MATCH_CONSTRAINT（即等于0dp）时，起作用。
+
+
+![chains-styles](/img/chains-styles.png)
+
 
 

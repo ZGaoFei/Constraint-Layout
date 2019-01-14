@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ConstraintLayoutEasyUseActivity" />
-        <activity android:name=".ui.ConstraintLayoutTwoActivity"></activity>
+        <activity android:name=".ui.ConstraintLayoutTwoActivity" />
+        <activity android:name=".ui.ConstraintLayoutThreeActivity"></activity>
     </application>
 
 </manifest>

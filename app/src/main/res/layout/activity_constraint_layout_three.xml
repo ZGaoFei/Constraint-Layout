@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ConstraintLayoutThreeActivity">
+
+    <!-- ratio -->
+    <TextView
+        android:id="@+id/tv_ratio_one"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:text="ratio one"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#cccccc" />
+
+    <TextView
+        android:id="@+id/tv_ratio_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:text="ratio two"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="W,2:3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/view_split"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#cccccc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <!-- weighted chains -->
+    <TextView
+        android:id="@+id/tv_chain_weighted_one"
+        style="@style/TextWidthMatch"
+        android:layout_marginTop="10dp"
+        android:text="one"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_weighted_two"
+        app:layout_constraintTop_toBottomOf="@id/view_split" />
+
+    <TextView
+        android:id="@+id/tv_chain_weighted_two"
+        style="@style/TextWidthMatch"
+        android:layout_marginTop="10dp"
+        android:text="two"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_weighted_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_weighted_three"
+        app:layout_constraintTop_toBottomOf="@id/view_split" />
+
+    <TextView
+        android:id="@+id/tv_chain_weighted_three"
+        style="@style/TextWidthMatch"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_weighted_two"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_weighted_four"
+        app:layout_constraintTop_toBottomOf="@id/view_split" />
+
+    <TextView
+        android:id="@+id/tv_chain_weighted_four"
+        style="@style/TextWidthMatch"
+        android:layout_marginTop="10dp"
+        android:text="four"
+        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_weighted_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_split" />
+
+    <!-- spread chains -->
+    <TextView
+        android:id="@+id/tv_chain_spread_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="one"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_weighted_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="two"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_weighted_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_two"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_weighted_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_four"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="four"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_weighted_one" />
+
+    <!-- spread inside chains -->
+    <TextView
+        android:id="@+id/tv_chain_spread_inside_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="one"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_inside_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_inside_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="two"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_inside_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_inside_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_inside_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_inside_two"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_spread_inside_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_spread_inside_four"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="four"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_spread_inside_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_one" />
+
+    <!-- packed chains -->
+    <TextView
+        android:id="@+id/tv_chain_packed_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="one"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_inside_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="two"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_inside_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_two"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_inside_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_four"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="four"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_spread_inside_one" />
+
+    <!-- packed chain with bias -->
+    <TextView
+        android:id="@+id/tv_chain_packed_bias_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="one"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_bias_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_packed_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_bias_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="two"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_bias_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_bias_three"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_packed_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_bias_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="three"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_bias_two"
+        app:layout_constraintRight_toLeftOf="@+id/tv_chain_packed_bias_four"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_packed_one" />
+
+    <TextView
+        android:id="@+id/tv_chain_packed_bias_four"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="four"
+        app:layout_constraintLeft_toRightOf="@+id/tv_chain_packed_bias_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chain_packed_one" />
+
+</android.support.constraint.ConstraintLayout>
