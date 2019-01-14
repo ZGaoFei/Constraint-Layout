@@ -6,17 +6,155 @@
     android:layout_height="match_parent"
     tools:context=".ui.ConstraintLayoutTwoActivity">
 
+    <!-- gone margin -->
     <TextView
         android:id="@+id/tv_layout_one"
         style="@style/TextWidthWrap"
-        android:visibility="visible"
-        app:layout_goneMarginEnd="10dp"
-        android:text="one"/>
+        android:text="one"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/tv_layout_two"
         style="@style/TextWidthWrap"
+        android:text="two"
         app:layout_constraintStart_toEndOf="@+id/tv_layout_one"
-        android:text="two"/>
+        app:layout_goneMarginStart="10dp" />
+
+    <!-- bias -->
+    <TextView
+        android:id="@+id/tv_bias_one"
+        style="@style/TextWidthWrap"
+        android:text="bias one"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_layout_two" />
+
+    <TextView
+        android:id="@+id/tv_bias_two"
+        style="@style/TextWidthWrap"
+        android:text="bias two"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <!-- Circular positioning -->
+    <TextView
+        android:id="@+id/tv_circle_three"
+        style="@style/TextWidthWrap"
+        android:text="circle three"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_circle_four"
+        style="@style/TextWidthWrap"
+        android:text="circle four"
+        app:layout_constraintCircle="@id/tv_circle_three"
+        app:layout_constraintCircleAngle="60"
+        app:layout_constraintCircleRadius="80dp" />
+
+    <TextView
+        android:id="@+id/tv_circle_five"
+        style="@style/TextWidthWrap"
+        android:text="circle five"
+        app:layout_constraintCircle="@id/tv_circle_three"
+        app:layout_constraintCircleAngle="240"
+        app:layout_constraintCircleRadius="80dp" />
+
+    <!-- min/max -->
+    <TextView
+        android:id="@+id/tv_min_or_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:maxHeight="60dp"
+        android:maxWidth="40dp"
+        android:minHeight="50dp"
+        android:minWidth="20dp"
+        android:text="min/max"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- 0dp -->
+    <TextView
+        android:id="@+id/tv_match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:text="match parent"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- enforcing constraints -->
+    <TextView
+        android:id="@+id/tv_enforcing_constraints_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="enforcing one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bias_one" />
+
+    <TextView
+        android:id="@+id/tv_enforcing_constraints_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginTop="10dp"
+        android:text="enforcing two enforcing two enforcing two enforcing two enforcing two"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@+id/tv_enforcing_constraints_one"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_enforcing_constraints_one" />
+
+    <!-- MATCH_CONSTRAINT dimensions -->
+    <TextView
+        android:id="@+id/tv_match_one"
+        style="@style/TextWidthWrap"
+        android:text="match one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintRight_toLeftOf="@+id/tv_match_two" />
+
+    <TextView
+        android:id="@+id/tv_match_two"
+        style="@style/TextWidthMatch"
+        android:layout_marginLeft="10dp"
+        android:text="match two"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_match_one"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_max="100dp"
+        app:layout_constraintWidth_min="30dp" />
+
+    <TextView
+        android:id="@+id/tv_match_three"
+        style="@style/TextWidthWrap"
+        android:text="match three"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_match_four" />
+
+    <TextView
+        android:id="@+id/tv_match_four"
+        style="@style/TextWidthMatch"
+        android:layout_marginLeft="10dp"
+        android:text="match four"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_match_three"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.4"/>
+
 
 </android.support.constraint.ConstraintLayout>
