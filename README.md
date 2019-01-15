@@ -174,5 +174,24 @@
 
 ![chains-styles](/img/chains-styles.png)
 
+    Group：ConstraintLayout的一个辅助类，不会在页面中显示，用于控制一组view的显示和隐藏
+    设置宽高无效
+
+    constraint_referenced_ids
+    添加view的ID，多个用逗号隔开（id,id,id）
+
+
+    GuideLine：导航线/辅助线，辅助类，不会在页面中显示
+    设置宽高无效，用于给其他view提供参考的辅助线
+
+    orientation：方向，水平或垂直
+    layout_constraintGuide_percent：百分比，水平或垂直方向的百分比
+
+
+    Barrier：障碍区，辅助类，不会在页面中显示，设置宽高无效
+    用于隔绝一定的区域
+
+    barrierDirection：隔绝的方向，左上右下（left/top/right/bottom/start/end）
+    constraint_referenced_ids：隔绝的views，添加view的ID，多个用逗号隔开（id,id,id）
 
 

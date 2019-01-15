@@ -67,13 +67,53 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_three"/>
 
     <TextView
+        android:id="@+id/tv_four"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="guideline and barrier and group"
+        android:gravity="center"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/view_three"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <View
+        android:id="@+id/view_four"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_four"/>
+
+    <TextView
+        android:id="@+id/tv_five"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ConstraintSet"
+        android:gravity="center"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/view_four"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <View
+        android:id="@+id/view_five"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_five"/>
+
+    <TextView
         android:id="@+id/tv_other"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="other"
         android:gravity="center"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/view_three"
+        app:layout_constraintTop_toBottomOf="@id/view_five"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 

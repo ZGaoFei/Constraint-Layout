@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ConstraintLayoutFourActivity">
+
+    <!-- group -->
+    <android.support.constraint.Group
+        android:id="@+id/tv_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_group_one,tv_group_two,tv_group_three" />
+
+    <TextView
+        android:id="@+id/tv_group_one"
+        style="@style/TextWidthWrap"
+        android:text="group one"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_group_two" />
+
+    <TextView
+        android:id="@+id/tv_group_two"
+        style="@style/TextWidthWrap"
+        android:text="group two"
+        app:layout_constraintLeft_toRightOf="@+id/tv_group_one"
+        app:layout_constraintRight_toLeftOf="@+id/tv_group_three" />
+
+    <TextView
+        android:id="@+id/tv_group_three"
+        style="@style/TextWidthWrap"
+        android:text="group three"
+        app:layout_constraintLeft_toRightOf="@+id/tv_group_two"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- guideline -->
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tv_guide_line_one"
+        style="@style/TextWidthWrap"
+        android:text="guide line one"
+        app:layout_constraintLeft_toRightOf="@+id/guide_line_two"
+        app:layout_constraintTop_toBottomOf="@+id/guide_line_one" />
+
+    <TextView
+        android:id="@+id/tv_guide_line_two"
+        style="@style/TextWidthWrap"
+        android:text="guide line two"
+        app:layout_constraintBottom_toTopOf="@+id/guide_line_one"
+        app:layout_constraintRight_toLeftOf="@+id/guide_line_two" />
+
+    <!-- barrier -->
+    <TextView
+        android:id="@+id/tv_barrier_one"
+        style="@style/TextWidthWrap"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="barrier one one "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_barrier_two"
+        style="@style/TextWidthWrap"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="barrier two"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_barrier_one" />
+
+    <TextView
+        android:id="@+id/tv_barrier_three"
+        style="@style/TextWidthWrap"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="barrier three"
+        app:layout_constraintLeft_toRightOf="@+id/barrier_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="tv_barrier_one,tv_barrier_two"/>
+
+
+</android.support.constraint.ConstraintLayout>
