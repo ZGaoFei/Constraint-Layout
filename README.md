@@ -27,12 +27,12 @@
     layout_constraintTop_toBottomOf
     layout_constraintBottom_toTopOf
     layout_constraintBottom_toBottomOf
-    layout_constraintBaseline_toBaselineOf
     layout_constraintStart_toEndOf
     layout_constraintStart_toStartOf
     layout_constraintEnd_toStartOf
     layout_constraintEnd_toEndOf
     layout_constraintBaseline_toBaselineOf：文字底部对齐,与alignBaseLine属性相似
+
 
     margin
 
@@ -43,6 +43,8 @@
     layout_marginRight
     layout_marginBottom
 
+
+    <!-- 以下请参考 activity_constraint_layout_two.xml -->
     gone margin：当前View与另一个View绑定后，另一个View的属性设置为了Gone，则以下属性会生效
 
     layout_goneMarginStart
@@ -52,10 +54,12 @@
     layout_goneMarginRight
     layout_goneMarginBottom
 
+
     bias：默认50%，结合居中显示使用
 
     layout_constraintHorizontal_bias：水平居中的百分比偏移
     layout_constraintVertical_bias：垂直居中的百分比偏移
+
 
     Circular positioning：以当前view的中心为坐标原点，在半径和角度对应的位置上绘制另一个view
 
@@ -110,6 +114,7 @@
     layout_constraintHeight_percent
 
 
+    <!-- 以下请参考 activity_constraint_layout_three.xml -->
     Ratio
     layout_constraintDimensionRatio
 
@@ -171,9 +176,10 @@
     类似LinearLayout中的android:layout_weight属性。
     使用layout_constraintHorizontal_weight或layout_constraintVertical_weight，当宽或高为MATCH_CONSTRAINT（即等于0dp）时，起作用。
 
-
 ![chains-styles](/img/chains-styles.png)
 
+
+    <!-- 以下请参考 activity_constraint_layout_four.xml -->
     Group：ConstraintLayout的一个辅助类，不会在页面中显示，用于控制一组view的显示和隐藏
     设置宽高无效
 
@@ -186,6 +192,8 @@
 
     orientation：方向，水平或垂直
     layout_constraintGuide_percent：百分比，水平或垂直方向的百分比
+    layout_constraintGuide_begin：水平或垂直方向距离父容器开始的距离的dp值
+    layout_constraintGuide_end：水平或垂直方向距离父容器结束的距离的dp值
 
 
     Barrier：障碍区，辅助类，不会在页面中显示，设置宽高无效
@@ -193,5 +201,24 @@
 
     barrierDirection：隔绝的方向，左上右下（left/top/right/bottom/start/end）
     constraint_referenced_ids：隔绝的views，添加view的ID，多个用逗号隔开（id,id,id）
+
+    <!-- end -->
+
+> UI编辑器使用的属性
+
+    实际使用中可以不用关心这些属性
+    layout_optimizationLevel
+    layout_editor_absoluteX
+    layout_editor_absoluteY
+    layout_constraintBaseline_creator
+    layout_constraintTop_creator
+    layout_constraintRight_creator
+    layout_constraintLeft_creator
+    layout_constraintBottom_creator
+
+
+> ConstraintLayout的所有属性都可以通过代码来进行设置
+
+
 
 

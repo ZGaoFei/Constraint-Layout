@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_end="100dp"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guide_line_two"
@@ -99,6 +99,12 @@
         android:layout_height="wrap_content"
         app:barrierDirection="end"
         app:constraint_referenced_ids="tv_barrier_one,tv_barrier_two"/>
+
+    <android.support.constraint.Constraints
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </android.support.constraint.Constraints>
 
 
 </android.support.constraint.ConstraintLayout>

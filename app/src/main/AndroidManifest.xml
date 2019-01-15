@@ -19,7 +19,8 @@
         <activity android:name=".ui.ConstraintLayoutEasyUseActivity" />
         <activity android:name=".ui.ConstraintLayoutTwoActivity" />
         <activity android:name=".ui.ConstraintLayoutThreeActivity" />
-        <activity android:name=".ui.ConstraintLayoutFourActivity"></activity>
+        <activity android:name=".ui.ConstraintLayoutFourActivity" />
+        <activity android:name=".ui.ConstraintLayoutAnimatorActivity"></activity>
     </application>
 
 </manifest>
