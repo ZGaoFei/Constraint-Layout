@@ -229,7 +229,83 @@
     内部保存了ConstraintLayout内部view的相关属性，是一个集合
     这里介绍一些方法的使用，如何实现动画效果
 
+    ConstraintSet()：构造函数
 
+    // 以下方法对应于相关属性的设置，结合布局实现方式来理解
+    // 其中viewId具体是指哪个，可以自行测试一下
+
+    // 将目标对象的Constraint复制到ConstraintSet上
+    clone(ConstraintLayout constraintLayout)
+    clone(ConstraintSet set)
+    clone(Context context, int constraintLayoutId)
+
+    // 将ConstraintSet的constraint作用到对应的ConstraintLayout上
+    applyTo(ConstraintLayout constraintLayout)
+
+    centerHorizontally(int viewId, int toView)
+    centerVertically(int viewId, int toView)
+    centerHorizontally(int centerID, int leftId, int leftSide, int leftMargin, int rightId, int rightSide, int rightMargin, float bias)
+    centerVertically(int centerID, int topId, int topSide, int topMargin, int bottomId, int bottomSide, int bottomMargin, float bias)
+
+    // 设置横竖链式布局，leftId/topId是边界ID/parent
+    // leftSide/topSide是LEFT/RIGHT/TOP/Bottom
+    createHorizontalChain(int leftId, int leftSide, int rightId, int rightSide, int[] chainIds, float[] weights, int style)
+    createVerticalChain(int topId, int topSide, int bottomId, int bottomSide, int[] chainIds, float[] weights, int style)
+
+    // 创建关联，将两个view设置关联
+    connect(int startID, int startSide, int endID, int endSide, int margin)
+    connect(int startID, int startSide, int endID, int endSide)
+
+    // 清除view的约束，清除完后view的width和height都为0，需要重新设置
+    clear(int viewId)
+    // 清除某一侧的约束
+    clear(int viewId, int anchor)
+
+    // anchor锚点，即左上右下开始结束
+    setMargin(int viewId, int anchor, int value)
+    setGoneMargin(int viewId, int anchor, int value)
+
+    setHorizontalBias(int viewId, float bias)
+    setVerticalBias(int viewId, float bias)
+    setDimensionRatio(int viewId, String ratio)
+
+    setVisibility(int viewId, int visibility)
+
+    constrainWidth(int viewId, int width)
+    constrainHeight(int viewId, int height)
+    constrainCircle(int viewId, int id, int radius, float angle)
+    constrainMaxWidth(int viewId, int width)
+    constrainMaxHeight(int viewId, int height)
+    constrainMinWidth(int viewId, int width)
+    constrainMinHeight(int viewId, int height)
+    constrainPercentWidth(int viewId, float percent)
+    constrainPercentHeight(int viewId, float percent)
+    constrainDefaultWidth(int viewId, int width)
+    constrainDefaultHeight(int viewId, int height)
+
+    setHorizontalWeight(int viewId, float weight)
+    setVerticalWeight(int viewId, float weight)
+
+    // 设置横竖向的chain style
+    setHorizontalChainStyle(int viewId, int chainStyle)
+    setVerticalChainStyle(int viewId, int chainStyle)
+
+    removeFromHorizontalChain(int viewId)
+    removeFromVerticalChain(int viewId)
+
+    // 创建guideline
+    create(int guidelineID, int orientation)
+    setGuideline...
+
+    // 创建屏障
+    createBarrier(int id, int direction, int... referenced)
+    setBarrierType(int id, int type)
+
+    // 加载
+    load(Context context, int resourceId)
+    load(Context context, XmlPullParser parser)
+
+<!-- end -->
 
 
 
