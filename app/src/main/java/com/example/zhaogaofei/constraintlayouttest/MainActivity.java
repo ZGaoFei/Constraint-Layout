@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutAnimator2Activity;
 import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutAnimatorActivity;
 import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutEasyUseActivity;
 import com.example.zhaogaofei.constraintlayouttest.ui.ConstraintLayoutFourActivity;
@@ -56,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ConstraintLayoutAnimatorActivity.start(mContext);
+            }
+        });
+
+        findViewById(R.id.tv_other).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConstraintLayoutAnimator2Activity.start(mContext);
             }
         });
     }

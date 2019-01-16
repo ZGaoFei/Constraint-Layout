@@ -219,6 +219,22 @@
 
 > ConstraintLayout的所有属性都可以通过代码来进行设置
 
+> 可以用鼠标来拖动相应的控件包括group、guideline、barrier等
+
+
+> ConstraintSet
+
+    可以用ConstraintSet来实现动画效果
+    （参考：ConstraintLayoutAnimatorActivity和ConstraintLayoutAnimator2Activity）
+    内部保存了ConstraintLayout内部view的相关属性，是一个集合
+    这里介绍一些方法的使用，如何实现动画效果
+
+
+
+
+
+
+
 
 
 

@@ -20,7 +20,8 @@
         <activity android:name=".ui.ConstraintLayoutTwoActivity" />
         <activity android:name=".ui.ConstraintLayoutThreeActivity" />
         <activity android:name=".ui.ConstraintLayoutFourActivity" />
-        <activity android:name=".ui.ConstraintLayoutAnimatorActivity"></activity>
+        <activity android:name=".ui.ConstraintLayoutAnimatorActivity" />
+        <activity android:name=".ui.ConstraintLayoutAnimator2Activity"></activity>
     </application>
 
 </manifest>
